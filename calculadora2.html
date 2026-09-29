@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+
+<body>
+    <input id="input1" type="text">
+
+    <br>
+    <button onclick="addNumber(7)">7</button>
+    <button onclick="addNumber(8)">8</button>
+    <button onclick="addNumber(9)">9</button>
+    <br>
+    <button onclick="addNumber(4)">4</button>
+    <button onclick="addNumber(5)">5</button>
+    <button onclick="addNumber(6)">6</button>
+    <br>
+    <button onclick="addNumber(1)">1</button>
+    <button onclick="addNumber(2)">2</button>
+    <button onclick="addNumber(3)">3</button>
+    <br>
+    <button onclick="addNumber(0)">0</button>
+    <button id="adicao">+</button>
+    <br>
+    <button id="calc">Calcular</button>
+
+    <script>
+        const btnSomar = document.getElementById("adicao");
+        const btnCalcular = document.getElementById("calc");
+        let primeiroNumero = 0;
+
+        function addNumber(buttonValue) {
+            const input1 = document.getElementById("input1");
+            input1.value += buttonValue;
+        }
+
+        btnSomar.addEventListener("click", function () {
+            primeiroNumero = Number(document.getElementById("input1").value);
+            document.getElementById("input1").value = "";
+
+        });
+
+        btnCalcular.addEventListener("click", function () {
+            const segundoNumero = Number(document.getElementById("input1").value);
+            const soma = primeiroNumero + segundoNumero;
+
+            document.getElementById("input1").value = soma;
+
+        });
+    
+        
+    </script>
+
+</body>
+</html>
